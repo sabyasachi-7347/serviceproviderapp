@@ -10,9 +10,10 @@ import { AppComponent } from './app.component';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { environment } from '../environments/environment';
+import { AddActionSheetComponent } from './components/add-action-sheet/add-action-sheet.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent,AddActionSheetComponent],
   imports: [BrowserModule,
     IonicModule.forRoot(), 
     AppRoutingModule, 

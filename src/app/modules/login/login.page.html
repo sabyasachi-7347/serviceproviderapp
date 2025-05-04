@@ -1,0 +1,35 @@
+<ion-content class="login-content" fullscreen>
+  <div class="overlay">
+    Powered By
+    <div class="logo-container">
+      <img src="..'/../../../../assets/imgs/logo/spsolutions.png" alt="App Logo" class="logo" />
+    </div>
+
+    <div class="welcome-text">I Am Here !!</div>
+
+    <form (submit)="login()">
+      <ion-item lines="none" class="input-item">
+        <ion-icon name="mail-outline" slot="start"></ion-icon>
+        <ion-input type="email" placeholder="Email" [(ngModel)]="email" name="email" required></ion-input>
+      </ion-item>
+
+      <ion-item lines="none" class="input-item">
+        <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+        <ion-input [type]="showPassword ? 'text' : 'password'" placeholder="Password"
+                   [(ngModel)]="password" name="password" required></ion-input>
+        <ion-icon [name]="showPassword ? 'eye-off' : 'eye'" slot="end" (click)="togglePassword()"></ion-icon>
+      </ion-item>
+
+      <div class="forgot-password" (click)="forgotPassword()">Forgot Password?</div>
+
+      <ion-button expand="block" shape="round" class="login-btn" type="submit">
+        Login
+      </ion-button>
+
+      <div class="signup-link">
+        Don’t have an account?
+        <span (click)="goToSignup()"> Sign Up</span>
+      </div>
+    </form>
+  </div>
+</ion-content>

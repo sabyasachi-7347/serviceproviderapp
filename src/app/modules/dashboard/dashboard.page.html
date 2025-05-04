@@ -1,0 +1,63 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-title>Welcome Username</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="danger" (click)="logout()">
+        <ion-icon name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="dashboard-content" fullscreen>
+  <div class="dashboard-wrapper">
+    <ion-card class="dash-card pending">
+      <ion-card-header>
+        <ion-icon name="construct-outline"></ion-icon>
+        <ion-card-title>Pending Requests</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <h2>{{ pendingRequests }}</h2>
+        <p>Need your attention</p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="dash-card due">
+      <ion-card-header>
+        <ion-icon name="alert-circle-outline"></ion-icon>
+        <ion-card-title>Due Servicing</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <h2>{{ dueServicing }}</h2>
+        <p>Items due for service</p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="dash-card upcoming">
+      <ion-card-header>
+        <ion-icon name="calendar-outline"></ion-icon>
+        <ion-card-title>Upcoming Servicing</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <h2>{{ upcomingServicing }}</h2>
+        <p>Scheduled this week</p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="dash-card amc">
+      <ion-card-header>
+        <ion-icon name="document-text-outline"></ion-icon>
+        <ion-card-title>AMC Expiry</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <h2>{{ amcExpiringSoon }} expiring</h2>
+        <p>{{ amcActive }} active contracts</p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="openAddPane()">
+      <ion-icon name="add-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
